@@ -1,1 +1,1 @@
-# Practicando con juegos javaScript
+# Practicando con juegos Javascript

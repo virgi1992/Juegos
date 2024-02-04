@@ -1,17 +1,18 @@
 const contenidoPantalla = document.querySelector(".pantalla");
 const btn= document.querySelectorAll(".btn");
+const ponerACero= document.querySelector("#c");
+const borrar= document.querySelector("#borrar");
+const igual = document.querySelector("#igual");
 
 btn.forEach((boton)=>{
     boton.addEventListener("click", ()=>{
-        const contenidoBoton= boton.textContent;
-        
 
-        if(contenidoBoton === "C"){
-            contenidoPantalla.textContent ="0";
+        if(boton === ponerACero){
+            contenidoPantalla.textContent = "0";
             return;
-        };
-
-        if(contenidoBoton === "R"){
+        }
+           
+        if(boton === borrar){
             if(contenidoPantalla.textContent.length === 1 || contenidoPantalla.textContent==="Error!!" ){
                 contenidoPantalla.textContent = "0";
             } else {
@@ -21,7 +22,7 @@ btn.forEach((boton)=>{
     }
 
 
-        if(boton.id === "igual"){
+        if(boton === igual){
 
             try {
                 contenidoPantalla.textContent= eval(contenidoPantalla.textContent);
@@ -32,15 +33,12 @@ btn.forEach((boton)=>{
             return;
         }
 
-        if(contenidoPantalla.textContent==="0" || contenidoPantalla.textContent==="Error!!"){
-            contenidoPantalla.textContent = contenidoBoton;
+        if(contenidoPantalla.textContent ==="0" || contenidoPantalla.textContent==="Error!!"){
+            contenidoPantalla.textContent = boton.textContent;
         }else{
-        contenidoPantalla.textContent += contenidoBoton;
+        contenidoPantalla.textContent += boton.textContent;
         }
         
     })
 });
-
-
-
 

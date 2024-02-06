@@ -1,7 +1,7 @@
 
 
 //CONSTANTES
-const generarNumeroAleatorio = () => Math.floor(Math.random()*101);
+const generarNumeroAleatorio = () => Math.ceil(Math.random()*10);
 const numeroParaAcertar = generarNumeroAleatorio();
 const noEsUnNumero = 0;
 const elNumeroEsMayor = 2;
@@ -82,10 +82,11 @@ const comprobarNumero = (textoIntroducido) =>{ //"9"
 const handleCompruebaClick = () =>{
     const texto = document.getElementById("number").value; //numero introducido en el input
     const estado = comprobarNumero(texto); //si el numero es mayor o menor o secreto
+    muestraNumeroDeIntentos();
     numeroDeIntentos++; //suma los intentos
     muestraMensajeDeComprobacion(texto, estado); // muestra el mensaje del numero y del estado
-    muestraNumeroDeIntentos();
-    gestionarGameOver(estado); // pregunta porque se pone estado ahi????
+    
+    gestionarGameOver(estado); 
 };
 
 const botonComprobar = document.getElementById("comprobar");
